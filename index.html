@@ -101,7 +101,7 @@
         /* ----- ADJUSTED HERO IMAGE STYLES ----- */
         .hero-avatar {
             flex-shrink: 0;
-            width: 220px; /* Increased frame size to fit beautifully alongside large text */
+            width: 220px; 
             height: 220px;
             border-radius: 50%;
             overflow: hidden;
@@ -117,7 +117,7 @@
         .hero-avatar img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Keeps image looking perfectly proportional */
+            object-fit: cover; 
         }
 
         /* ----- BADGE / TRAINING ----- */
@@ -274,11 +274,14 @@
             text-align: center;
             border: 1px solid #eef2f6;
             transition: 0.2s;
+            text-decoration: none;
+            color: inherit;
         }
 
         .work-item:hover {
             border-color: #2563eb;
             background: #fafcff;
+            transform: translateY(-3px);
         }
 
         .work-item i {
@@ -368,14 +371,14 @@
         /* ----- RESPONSIVE ----- */
         @media (max-width: 700px) {
             .hero {
-                flex-direction: column-reverse; /* Places image beautifully at the top on phone displays */
+                flex-direction: column-reverse; 
                 align-items: center;
                 text-align: center;
                 gap: 2rem;
             }
 
             .hero-avatar {
-                width: 160px; /* Sleeker size on smaller mobile viewports */
+                width: 160px; 
                 height: 160px;
             }
 
@@ -399,6 +402,7 @@
 
 <div class="container">
 
+    <!-- ----- HERO HEADER ----- -->
     <header class="hero">
         <div class="hero-text">
             <h1>Hi, I'm <span>Don Raigor</span></h1>
@@ -406,172 +410,126 @@
             <div class="trained-badge">
                 <i class="fas fa-graduation-cap"></i> Graduate · Virtual Assistant Online Class
             </div>
-            <p style="margin-top: 0.8rem; color: #475569;">
-                <i class="fas fa-check-circle" style="color: #2563eb;"></i> 
-                Professionally trained in admin, design, and digital tools
+            <p style="margin-top: 1rem; color: #475569;">
+                <i class="fas fa-map-marker-alt"></i> Available Globally | Remote Work Specialist
             </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn">Hire Me</a>
-                <a href="#services" class="btn btn-outline">View Services</a>
+                <a href="#work" class="btn btn-outline">View My Work</a>
             </div>
         </div>
         <div class="hero-avatar">
-            <img src="don.png" alt="Don Raigor Profile Picture" />
+            <!-- Replace placeholder with actual profile picture URL -->
+            <img src="https://via.placeholder.com/220" alt="Don Raigor Portrait" />
         </div>
     </header>
 
+    <!-- ----- SERVICES SECTION ----- -->
     <section id="services">
-        <div class="section-title">
-            <i class="fas fa-bolt"></i> 
-            <span>What I Can Do For You</span>
-        </div>
+        <h2 class="section-title"><i class="fas fa-laptop-house"></i> Services I Offer</h2>
         <div class="services-grid">
             <div class="service-card">
-                <i class="fas fa-headset"></i>
-                <h3>Virtual Assistance</h3>
-                <p>Streamline daily tasks so you can focus on growth.</p>
+                <i class="fas fa-envelope-open-text"></i>
+                <h3>Email Management</h3>
+                <p>Organizing your inbox, filtering spam, responding to routine inquiries, and highlighting high-priority messages.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-database"></i>
-                <h3>Data Entry &amp; Research</h3>
-                <p>Accurate, organized, and fast – I dig deep.</p>
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Schedule & Calendar</h3>
+                <p>Booking appointments, managing itineraries, and setting up reminders to ensure your day runs seamlessly.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-envelope"></i>
-                <h3>Email &amp; Calendar Management</h3>
-                <p>Inbox zero &amp; scheduling that actually works.</p>
+                <i class="fas fa-paste"></i>
+                <h3>Data Entry & Admin</h3>
+                <p>Accurately inputting information, updating records, creating spreadsheets, and compiling basic business summaries.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-comment-dots"></i>
-                <h3>Customer Support</h3>
-                <p>Professional email &amp; chat support for happy clients.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-palette"></i>
-                <h3>Canva Graphic Design</h3>
-                <p>Social posts, presentations, branding – all eye-catching.</p>
-            </div>
-            <div class="service-card">
-                <i class="fab fa-wordpress"></i>
-                <h3>WordPress Management</h3>
-                <p>Content uploads, site updates, and maintenance.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-video"></i>
-                <h3>Short-Form Video Editing</h3>
-                <p>Engaging Reels, TikToks, and YouTube Shorts.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-tasks"></i>
-                <h3>General Admin Support</h3>
-                <p>Tailored to your business – no task too small.</p>
+                <i class="fas fa-share-alt"></i>
+                <h3>Social Media Support</h3>
+                <p>Scheduling content pieces, monitoring basic metrics, and interacting with post comments to maintain your presence.</p>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="section-title">
-            <i class="fas fa-user-astronaut"></i>
-            <span>About Me</span>
-        </div>
+    <!-- ----- BIO & SKILLS SECTION ----- -->
+    <section id="about">
+        <h2 class="section-title"><i class="fas fa-user-tie"></i> About Me</h2>
         <div class="bio-wrap">
             <div class="bio-text">
-                <p><strong>Hi, I'm Don Raigor</strong> – a passionate and dedicated virtual assistant, freshly trained and ready to help entrepreneurs and small businesses thrive.</p>
-                <p>I recently completed an intensive <strong>Virtual Assistant training program</strong> where I mastered administrative support, digital tools, content creation, and client communication. I'm eager to apply my skills in real-world projects and grow alongside your business.</p>
-                <p>I bring a <strong>growth mindset</strong>, strong attention to detail, and a genuine commitment to making your life easier. Let me handle the busywork so you can focus on what matters most.</p>
+                <p>I am a dedicated General Virtual Assistant trained to handle administrative complexities, freeing you up to focus purely on strategic scaling and essential operations.</p>
+                <p>Equipped with modern productivity workflows, I focus on precision, dependability, and prompt completion of objectives. Whether you need a short-term hand or ongoing project support, I am structured to adjust to your unique routine.</p>
                 
+                <h3 style="margin-top: 1.5rem; font-weight:600; font-size: 1.1rem;">Core Competencies</h3>
                 <div class="skills-tags">
-                    <span class="skill-tag">📋 Admin Pro</span>
-                    <span class="skill-tag">🎨 Canva Certified</span>
-                    <span class="skill-tag">📧 Inbox Hero</span>
-                    <span class="skill-tag">🎬 Video Editor</span>
-                    <span class="skill-tag">📊 Research</span>
+                    <span class="skill-tag">Inbox Management</span>
+                    <span class="skill-tag">Google Workspace</span>
+                    <span class="skill-tag">Microsoft 365</span>
+                    <span class="skill-tag">Trello / Asana</span>
+                    <span class="skill-tag">Time Management</span>
+                    <span class="skill-tag">Customer Care Support</span>
                 </div>
             </div>
             <div class="bio-highlights">
+                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Why Work With Me?</h3>
                 <ul>
-                    <li><i class="fas fa-graduation-cap"></i> VA School Graduate</li>
-                    <li><i class="fas fa-certificate"></i> 200+ training hours</li>
-                    <li><i class="fas fa-heart"></i> Passionate learner</li>
-                    <li><i class="fas fa-clock"></i> Fast &amp; reliable</li>
-                    <li><i class="fas fa-globe"></i> Remote-ready</li>
+                    <li><i class="fas fa-check-circle"></i> Highly Organized Workflow</li>
+                    <li><i class="fas fa-check-circle"></i> Clear Communication Style</li>
+                    <li><i class="fas fa-check-circle"></i> Adaptable & Quick Learner</li>
+                    <li><i class="fas fa-check-circle"></i> Strict Privacy Standards</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="section-title">
-            <i class="fas fa-briefcase"></i>
-            <span>Training Projects</span>
-        </div>
-        <p style="color: #475569; margin-bottom: 1.5rem;">
-            <i class="fas fa-info-circle" style="color: #2563eb;"></i> 
-            These are projects I completed during my VA training – showcasing my skills and readiness.
-        </p>
+    <!-- ----- PORTFOLIO GRID ----- -->
+    <section id="work">
+        <h2 class="section-title"><i class="fas fa-briefcase"></i> Featured Projects</h2>
         <div class="work-grid">
-            <div class="work-item">
-                <i class="fas fa-paint-brush"></i>
-                <span>Brand Identity Kit</span>
-                <small>Canva design for a mock startup</small>
-                <div class="project-badge">Training Project</div>
-            </div>
-            <div class="work-item">
-                <i class="fab fa-wordpress"></i>
-                <span>WordPress Blog Setup</span>
-                <small>5 posts + theme customization</small>
-                <div class="project-badge">Training Project</div>
-            </div>
-            <div class="work-item">
-                <i class="fas fa-video"></i>
-                <span>Social Media Reel</span>
-                <small>30-second product promo</small>
-                <div class="project-badge">Training Project</div>
-            </div>
-            <div class="work-item">
-                <i class="fas fa-calendar-check"></i>
-                <span>Executive Calendar</span>
-                <small>Mock CEO schedule management</small>
-                <div class="project-badge">Training Project</div>
-            </div>
+            <a href="#" class="work-item">
+                <i class="fas fa-folder-open"></i>
+                <span>Inbox Clean Up</span>
+                <small>Case Study</small>
+                <div><span class="project-badge">Email Admin</span></div>
+            </a>
+            <a href="#" class="work-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Data Tracking</span>
+                <small>Spreadsheet Automation</small>
+                <div><span class="project-badge">Data Entry</span></div>
+            </a>
+            <a href="#" class="work-item">
+                <i class="fas fa-bullhorn"></i>
+                <span>Content Calendar</span>
+                <small>Sample Schedule Outline</small>
+                <div><span class="project-badge">Social Media</span></div>
+            </a>
+            <a href="#" class="work-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Research Summary</span>
+                <small>Competitor Outline Doc</small>
+                <div><span class="project-badge">Market Research</span></div>
+            </a>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="contact-section">
-            <div>
-                <h2><i class="fas fa-paper-plane"></i> Let’s Work Together</h2>
-                <p style="color: #94a3b8; margin-top: 0.3rem;">
-                    <i class="fas fa-bolt" style="color: #60a5fa;"></i> 
-                    Available for freelance projects · Let's build something great
-                </p>
-            </div>
-            <div class="contact-links">
-                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i><span class="label">withdonraigor@gmail.com</span></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><span class="label">LinkedIn</span></a>
-                <a href="#" aria-label="Upwork"><i class="fas fa-briefcase"></i><span class="label">Upwork</span></a>
-                <a href="#" aria-label="Fiverr"><i class="fas fa-star"></i><span class="label">Fiverr</span></a>
-            </div>
+    <!-- ----- CONTACT FOOTER ----- -->
+    <section id="contact" class="contact-section">
+        <div>
+            <h2><i class="fas fa-paper-plane"></i> Let's Collaborate</h2>
+            <p style="color: #94a3b8; margin-top: 0.3rem;">Get in touch to delegate your tasks today.</p>
+        </div>
+        <div class="contact-links">
+            <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i><span class="label">Email</span></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i><span class="label">LinkedIn</span></a>
+            <a href="#" target="_blank"><i class="fab fa-skype"></i><span class="label">Skype</span></a>
         </div>
     </section>
 
     <footer class="footer-note">
-        &copy; 2026 Don Raigor · <i class="fas fa-graduation-cap" style="color: #2563eb;"></i> VA School Graduate · Ready to support your business
+        <p>&copy; 2026 Don Raigor. All Rights Reserved. Designed for performance.</p>
     </footer>
 
 </div>
-
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
