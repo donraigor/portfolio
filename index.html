@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Your Name · Virtual Assistant Portfolio</title>
-    <!-- Font Awesome Icons (free) -->
+    <title>Don Raigor · Virtual Assistant Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
     <style>
         /* ----- RESET & BASE ----- */
@@ -35,6 +34,12 @@
             align-items: center;
             padding: 2rem 0 3rem;
             border-bottom: 1px solid rgba(11, 26, 51, 0.06);
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
         }
 
         .hero-text h1 {
@@ -53,17 +58,6 @@
             color: #334155;
             margin-top: 0.5rem;
             font-weight: 400;
-        }
-
-        .hero-text .sub-tagline {
-            font-size: 1rem;
-            color: #475569;
-            margin-top: 0.3rem;
-            background: #dbeafe;
-            display: inline-block;
-            padding: 0.2rem 1rem;
-            border-radius: 30px;
-            font-weight: 500;
         }
 
         .hero-cta {
@@ -104,18 +98,26 @@
             box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
         }
 
+        /* ----- ADJUSTED HERO IMAGE STYLES ----- */
         .hero-avatar {
-            background: #e2e8f0;
-            width: 140px;
-            height: 140px;
+            flex-shrink: 0;
+            width: 220px; /* Increased frame size to fit beautifully alongside large text */
+            height: 220px;
             border-radius: 50%;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: #2563eb;
             background: #dbeafe;
-            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.12);
+            border: 4px solid #ffffff;
+            outline: 2px solid #2563eb;
+        }
+
+        .hero-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Keeps image looking perfectly proportional */
         }
 
         /* ----- BADGE / TRAINING ----- */
@@ -241,7 +243,7 @@
             width: 1.4rem;
         }
 
-        /* ----- SKILLS (training highlights) ----- */
+        /* ----- SKILLS ----- */
         .skills-tags {
             display: flex;
             flex-wrap: wrap;
@@ -258,7 +260,7 @@
             font-weight: 500;
         }
 
-        /* ----- PORTFOLIO / PROJECTS (student projects) ----- */
+        /* ----- PORTFOLIO / PROJECTS ----- */
         .work-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -366,13 +368,23 @@
         /* ----- RESPONSIVE ----- */
         @media (max-width: 700px) {
             .hero {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1.5rem;
+                flex-direction: column-reverse; /* Places image beautifully at the top on phone displays */
+                align-items: center;
+                text-align: center;
+                gap: 2rem;
             }
 
-            .hero-text h1 {
-                font-size: 2.2rem;
+            .hero-avatar {
+                width: 160px; /* Sleeker size on smaller mobile viewports */
+                height: 160px;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .trained-badge {
+                display: inline-flex;
             }
 
             .contact-section {
@@ -387,7 +399,6 @@
 
 <div class="container">
 
-    <!-- ====== HERO ====== -->
     <header class="hero">
         <div class="hero-text">
             <h1>Hi, I'm <span>Don Raigor</span></h1>
@@ -409,66 +420,55 @@
         </div>
     </header>
 
-    <!-- ====== SERVICES ====== -->
     <section id="services">
         <div class="section-title">
             <i class="fas fa-bolt"></i> 
             <span>What I Can Do For You</span>
         </div>
         <div class="services-grid">
-
             <div class="service-card">
                 <i class="fas fa-headset"></i>
                 <h3>Virtual Assistance</h3>
                 <p>Streamline daily tasks so you can focus on growth.</p>
             </div>
-
             <div class="service-card">
                 <i class="fas fa-database"></i>
                 <h3>Data Entry &amp; Research</h3>
                 <p>Accurate, organized, and fast – I dig deep.</p>
             </div>
-
             <div class="service-card">
                 <i class="fas fa-envelope"></i>
                 <h3>Email &amp; Calendar Management</h3>
                 <p>Inbox zero &amp; scheduling that actually works.</p>
             </div>
-
             <div class="service-card">
                 <i class="fas fa-comment-dots"></i>
                 <h3>Customer Support</h3>
                 <p>Professional email &amp; chat support for happy clients.</p>
             </div>
-
             <div class="service-card">
                 <i class="fas fa-palette"></i>
                 <h3>Canva Graphic Design</h3>
                 <p>Social posts, presentations, branding – all eye-catching.</p>
             </div>
-
             <div class="service-card">
                 <i class="fab fa-wordpress"></i>
                 <h3>WordPress Management</h3>
                 <p>Content uploads, site updates, and maintenance.</p>
             </div>
-
             <div class="service-card">
                 <i class="fas fa-video"></i>
                 <h3>Short-Form Video Editing</h3>
                 <p>Engaging Reels, TikToks, and YouTube Shorts.</p>
             </div>
-
             <div class="service-card">
                 <i class="fas fa-tasks"></i>
                 <h3>General Admin Support</h3>
                 <p>Tailored to your business – no task too small.</p>
             </div>
-
         </div>
     </section>
 
-    <!-- ====== ABOUT / BIO ====== -->
     <section>
         <div class="section-title">
             <i class="fas fa-user-astronaut"></i>
@@ -500,7 +500,6 @@
         </div>
     </section>
 
-    <!-- ====== PORTFOLIO / TRAINING PROJECTS ====== -->
     <section>
         <div class="section-title">
             <i class="fas fa-briefcase"></i>
@@ -538,7 +537,6 @@
         </div>
     </section>
 
-    <!-- ====== CONTACT / FOOTER ====== -->
     <section id="contact">
         <div class="contact-section">
             <div>
@@ -549,7 +547,7 @@
                 </p>
             </div>
             <div class="contact-links">
-                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i><span class="label">alex@work.com</span></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i><span class="label">withdonraigor@gmail.com</span></a>
                 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><span class="label">LinkedIn</span></a>
                 <a href="#" aria-label="Upwork"><i class="fas fa-briefcase"></i><span class="label">Upwork</span></a>
                 <a href="#" aria-label="Fiverr"><i class="fas fa-star"></i><span class="label">Fiverr</span></a>
@@ -563,7 +561,6 @@
 
 </div>
 
-<!-- ====== SMOOTH SCROLL ====== -->
 <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
