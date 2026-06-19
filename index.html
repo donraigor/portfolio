@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Your Name · Virtual Assistant Portfolio</title>
+    <!-- Font Awesome Icons (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #0b1a33;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ----- HEADER / HERO ----- */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0 3rem;
+            border-bottom: 1px solid rgba(11, 26, 51, 0.06);
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 span {
+            color: #2563eb;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.2rem;
+            color: #334155;
+            margin-top: 0.5rem;
+            font-weight: 400;
+        }
+
+        .hero-text .sub-tagline {
+            font-size: 1rem;
+            color: #475569;
+            margin-top: 0.3rem;
+            background: #dbeafe;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        .hero-cta {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: #fff;
+            padding: 0.7rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.2s;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #2563eb;
+            border: 1.5px solid #2563eb;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: #fff;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        .hero-avatar {
+            background: #e2e8f0;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #2563eb;
+            background: #dbeafe;
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+        }
+
+        /* ----- BADGE / TRAINING ----- */
+        .trained-badge {
+            background: #0b1a33;
+            color: #ffffff;
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 0.8rem;
+        }
+
+        .trained-badge i {
+            color: #60a5fa;
+        }
+
+        /* ----- SECTION TITLES ----- */
+        section {
+            margin: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title i {
+            color: #2563eb;
+            font-size: 1.6rem;
+        }
+
+        /* ----- SERVICES GRID ----- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 1.8rem 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: 0.25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.06);
+            border-color: #dbeafe;
+        }
+
+        .service-card i {
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .service-card p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* ----- ABOUT / BIO ----- */
+        .bio-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(0,0,0,0.02);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+        }
+
+        .bio-text {
+            flex: 2;
+            min-width: 260px;
+        }
+
+        .bio-text p {
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .bio-highlights {
+            flex: 1;
+            min-width: 200px;
+            background: #f1f5f9;
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+        }
+
+        .bio-highlights ul {
+            list-style: none;
+        }
+
+        .bio-highlights li {
+            margin: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .bio-highlights i {
+            color: #2563eb;
+            width: 1.4rem;
+        }
+
+        /* ----- SKILLS (training highlights) ----- */
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1.2rem;
+        }
+
+        .skill-tag {
+            background: #dbeafe;
+            color: #1e3a8a;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* ----- PORTFOLIO / PROJECTS (student projects) ----- */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .work-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.5rem 1.2rem;
+            text-align: center;
+            border: 1px solid #eef2f6;
+            transition: 0.2s;
+        }
+
+        .work-item:hover {
+            border-color: #2563eb;
+            background: #fafcff;
+        }
+
+        .work-item i {
+            font-size: 2.2rem;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-item span {
+            display: block;
+            font-weight: 500;
+        }
+
+        .work-item small {
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+
+        .project-badge {
+            background: #f1f5f9;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            color: #475569;
+            display: inline-block;
+            margin-top: 0.4rem;
+        }
+
+        /* ----- CONTACT / FOOTER ----- */
+        .contact-section {
+            background: #0b1a33;
+            color: #f1f5f9;
+            padding: 3rem 2.5rem;
+            border-radius: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-section h2 {
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+
+        .contact-section h2 i {
+            color: #60a5fa;
+            margin-right: 0.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .contact-links a {
+            color: #cbd5e1;
+            font-size: 1.4rem;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .contact-links a:hover {
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        .contact-links .label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            display: inline-block;
+            margin-left: 0.3rem;
+            font-weight: 400;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 3rem;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 700px) {
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ====== HERO ====== -->
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Hi, I'm <span>Alex Morgan</span></h1>
+            <p class="tagline">Trained Virtual Assistant · Ready to Support Your Business</p>
+            <div class="trained-badge">
+                <i class="fas fa-graduation-cap"></i> Graduate · Virtual Assistant School
+            </div>
+            <p style="margin-top: 0.8rem; color: #475569;">
+                <i class="fas fa-check-circle" style="color: #2563eb;"></i> 
+                Professionally trained in admin, design, and digital tools
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn">Hire Me</a>
+                <a href="#services" class="btn btn-outline">View Services</a>
+            </div>
+        </div>
+        <div class="hero-avatar">
+            <i class="fas fa-user-graduate"></i>
+        </div>
+    </header>
+
+    <!-- ====== SERVICES ====== -->
+    <section id="services">
+        <div class="section-title">
+            <i class="fas fa-bolt"></i> 
+            <span>What I Can Do For You</span>
+        </div>
+        <div class="services-grid">
+
+            <div class="service-card">
+                <i class="fas fa-headset"></i>
+                <h3>Virtual Assistance</h3>
+                <p>Streamline daily tasks so you can focus on growth.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-database"></i>
+                <h3>Data Entry &amp; Research</h3>
+                <p>Accurate, organized, and fast – I dig deep.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email &amp; Calendar Management</h3>
+                <p>Inbox zero &amp; scheduling that actually works.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-comment-dots"></i>
+                <h3>Customer Support</h3>
+                <p>Professional email &amp; chat support for happy clients.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-palette"></i>
+                <h3>Canva Graphic Design</h3>
+                <p>Social posts, presentations, branding – all eye-catching.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fab fa-wordpress"></i>
+                <h3>WordPress Management</h3>
+                <p>Content uploads, site updates, and maintenance.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-video"></i>
+                <h3>Short-Form Video Editing</h3>
+                <p>Engaging Reels, TikToks, and YouTube Shorts.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-tasks"></i>
+                <h3>General Admin Support</h3>
+                <p>Tailored to your business – no task too small.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== ABOUT / BIO ====== -->
+    <section>
+        <div class="section-title">
+            <i class="fas fa-user-astronaut"></i>
+            <span>About Me</span>
+        </div>
+        <div class="bio-wrap">
+            <div class="bio-text">
+                <p><strong>Hi, I'm Alex</strong> – a passionate and dedicated virtual assistant, freshly trained and ready to help entrepreneurs and small businesses thrive.</p>
+                <p>I recently completed an intensive <strong>Virtual Assistant training program</strong> where I mastered administrative support, digital tools, content creation, and client communication. I'm eager to apply my skills in real-world projects and grow alongside your business.</p>
+                <p>I bring a <strong>growth mindset</strong>, strong attention to detail, and a genuine commitment to making your life easier. Let me handle the busywork so you can focus on what matters most.</p>
+                
+                <div class="skills-tags">
+                    <span class="skill-tag">📋 Admin Pro</span>
+                    <span class="skill-tag">🎨 Canva Certified</span>
+                    <span class="skill-tag">📧 Inbox Hero</span>
+                    <span class="skill-tag">🎬 Video Editor</span>
+                    <span class="skill-tag">📊 Research Guru</span>
+                </div>
+            </div>
+            <div class="bio-highlights">
+                <ul>
+                    <li><i class="fas fa-graduation-cap"></i> VA School Graduate</li>
+                    <li><i class="fas fa-certificate"></i> 200+ training hours</li>
+                    <li><i class="fas fa-heart"></i> Passionate learner</li>
+                    <li><i class="fas fa-clock"></i> Fast &amp; reliable</li>
+                    <li><i class="fas fa-globe"></i> Remote-ready</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PORTFOLIO / TRAINING PROJECTS ====== -->
+    <section>
+        <div class="section-title">
+            <i class="fas fa-briefcase"></i>
+            <span>Training Projects</span>
+        </div>
+        <p style="color: #475569; margin-bottom: 1.5rem;">
+            <i class="fas fa-info-circle" style="color: #2563eb;"></i> 
+            These are projects I completed during my VA training – showcasing my skills and readiness.
+        </p>
+        <div class="work-grid">
+            <div class="work-item">
+                <i class="fas fa-paint-brush"></i>
+                <span>Brand Identity Kit</span>
+                <small>Canva design for a mock startup</small>
+                <div class="project-badge">Training Project</div>
+            </div>
+            <div class="work-item">
+                <i class="fab fa-wordpress"></i>
+                <span>WordPress Blog Setup</span>
+                <small>5 posts + theme customization</small>
+                <div class="project-badge">Training Project</div>
+            </div>
+            <div class="work-item">
+                <i class="fas fa-video"></i>
+                <span>Social Media Reel</span>
+                <small>30-second product promo</small>
+                <div class="project-badge">Training Project</div>
+            </div>
+            <div class="work-item">
+                <i class="fas fa-calendar-check"></i>
+                <span>Executive Calendar</span>
+                <small>Mock CEO schedule management</small>
+                <div class="project-badge">Training Project</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CONTACT / FOOTER ====== -->
+    <section id="contact">
+        <div class="contact-section">
+            <div>
+                <h2><i class="fas fa-paper-plane"></i> Let’s Work Together</h2>
+                <p style="color: #94a3b8; margin-top: 0.3rem;">
+                    <i class="fas fa-bolt" style="color: #60a5fa;"></i> 
+                    Available for freelance projects · Let's build something great
+                </p>
+            </div>
+            <div class="contact-links">
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i><span class="label">alex@work.com</span></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><span class="label">LinkedIn</span></a>
+                <a href="#" aria-label="Upwork"><i class="fas fa-briefcase"></i><span class="label">Upwork</span></a>
+                <a href="#" aria-label="Fiverr"><i class="fas fa-star"></i><span class="label">Fiverr</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-note">
+        &copy; 2026 Alex Morgan · <i class="fas fa-graduation-cap" style="color: #2563eb;"></i> VA School Graduate · Ready to support your business
+    </footer>
+
+</div>
+
+<!-- ====== SMOOTH SCROLL ====== -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
